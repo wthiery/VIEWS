@@ -55,12 +55,12 @@ res_reg = 0.20; % predefined regular grid
 
 
 % name of the best logistic regression model (obtained by optimisation, see paper section 4)
-model_best = 'LOGR_OT_best.mat';
+model_best = 'OT_models_best.mat';
 
 
 % name of the best logistic regression model (obtained by optimisation, see paper section 4)
-% OT_data_test = 'OT_d_best_20050311.mat';   % example data for testing the model - calm day    (11/03/2005)
-OT_data_test = 'OT_d_best_20050314.mat'; % example data for testing the model - extreme day (14/03/2005)
+OT_data_test = 'OT_d_best_20050311.mat';   % example data for testing the model - calm day    (11/03/2005)
+% OT_data_test = 'OT_d_best_20050314.mat'; % example data for testing the model - extreme day (14/03/2005)
 
 
 
@@ -93,8 +93,20 @@ end
 % --------------------------------------------------------------------
 
 
-mf_VIEWS(OT_d, LOGR_OT_best);
+% whole lake
+mf_VIEWS('Whole lake', OT_d, LOGR_OT_best);
 
+
+% Sector Uganda
+mf_VIEWS('Uganda'    , OT_d, LOGR_OT_best_Uga);
+
+
+% Sector Kenya
+mf_VIEWS('Kenya'     , OT_d, LOGR_OT_best_Ken);
+
+
+% Sector Tanzania
+mf_VIEWS('Tanzania'  , OT_d, LOGR_OT_best_Tan);
 
 
 % stop clock
